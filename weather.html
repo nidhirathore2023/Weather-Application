@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+    <div>
+        <h1>Weather Application</h1>
+    </div>
+<div class="input">
+<input type="text" placeholder=" Enter the city "class="value">
+<input type="submit" value="Search"  class="search">
+</div>
+<div class="display">
+<h2 class="name"></h2>
+<p class="temp"></p>
+<p class="description"></p>
+</div>
+
+    
+     <script>
+  
+        //Select Elements
+        var button=document.querySelector('.search');
+        var input=document.querySelector('.value');
+        var name1=document.querySelector('.name');
+        var des=document.querySelector('.description');
+        var temp=document.querySelector('.temp');
+         
+         //Application Data
+        button.addEventListener('click',function()
+        {
+            console.log(input.value);
+            fetch('https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&appid=ee3500cf7be78d268546575bd2952763')
+        .then(response=>response.json())
+        .then(data=> {
+            console.log(data);
+       var cityname=data['name'];
+       console.log(cityname);
+       var temperature=Math.floor(data['main']['temp']);
+       var de=data['weather'][0]['description'];
+       name1.innerText="Cityname:   "+cityname;
+       temperature= temperature-273;
+       temp.innerText="TEMPERATURE:  "+temperature+"* C";
+       des.innerText="Description:  "+de;
+        })
+        //Showing error
+      .catch(error=>alert("You have entered wrong city name"));
+    
+    });
+    </script>
+
+</body>
+</html>

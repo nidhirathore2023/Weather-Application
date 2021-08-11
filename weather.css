@@ -1,0 +1,44 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  background-color:rgba(13, 104, 139, 0.979) ;
+
+}
+h1{
+  padding-left: 350px;
+  font-family: sans-serif;
+  padding-top:30px;
+}
+.input{
+  padding-left: 300px;
+  padding-top: 50px;
+}
+.value
+{
+  height: 50px;
+  width: 400px;
+  font-size: 25px;
+}
+.search
+{
+  height: 50px;
+  width: 100px;
+  font-size: x-large;
+}
+.display
+{
+  padding-left: 420px;
+  padding-top: 70px;
+  font-size: 25px;
+  font-family: sans-serif;
+  
+}
+.name
+{
+  color: black;
+  padding-bottom: 22px;
+}
+.description
+{
+  padding-top: 22px;
+}
